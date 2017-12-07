@@ -1,0 +1,17 @@
+{
+    "SourceRootName": "Source",
+    "TestResultFolderName": "test-reports",
+    "WorkingDir": "Temp",
+    "DependenciesFolderName": "Dependencies",
+    "RepositoryName": "LocalRepo",
+    "AppName": "helm",
+    "AppVersion": "2.7.2",
+    "AppUrl": "https://storage.googleapis.com/kubernetes-helm/helm-v${AppVersion}-windows-amd64.tar.gz",
+    "AppWebsite": "https://helm.sh/",
+    "AppAuhtors": "Helm is supported by and built with a community of over 250 developers",
+    "AppDocsUrl": "https://docs.helm.sh/",
+    "AppTags": "kubernetes helm container",
+    "AppSummary": "Helm is the best way to find, share, and use software built for Kubernetes.",
+    "AppDescription": "Helm helps you manage Kubernetes applications — Helm Charts helps you define, install, and upgrade even the most complex Kubernetes application. Charts are easy to create, version, share, and publish — so start using Helm and stop the copy-and-paste madness. The latest version of Helm is maintained by the CNCF - in collaboration with Microsoft, Google, Bitnami and the Helm contributor community"
+}
+
