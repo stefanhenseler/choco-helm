@@ -1,6 +1,9 @@
 # Chocolatey Package for Helm
 
-This repo contains the source of the helm package for chocolatey.
+This repo contains the build code of the kubernetes helm package for chocolatey.
+
+[![Build status](https://ci.appveyor.com/api/projects/status/9vli24fuw7knyyjh/branch/master?svg=true)](https://ci.appveyor.com/project/synax/choco-helm/branch/master)
+
 
 ## Install the latest version
 

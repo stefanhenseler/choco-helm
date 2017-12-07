@@ -137,8 +137,7 @@ task build {
 		foreach ($Value in $ReplaceValues.GetEnumerator()) {
 			Write-Build -Color Green "Replacing [$($Value.Key)] with [$($Value.Value)]"
 			$NuSpecContent = $NuSpecContent -replace $Value.Key,$Value.Value
-		}		
-		
+		}	
 		
 		$NuSpecContent | Set-Content $NuSpecPath
 
@@ -156,7 +155,7 @@ task build {
 
 task deploy {
 
-		choco push -api $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		choco push ((Get-ChildItem -Path $ENV:BHRepositoryPath -Filter '*.nupkg').FullName) --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
 }
 
 # Synopsis: Remove temporary files.
