@@ -1,17 +1,3 @@
-﻿VERIFICATION
-Verification is intended to assist the Chocolatey moderators and community
-in verifying that this package's contents are trustworthy.
- 
-Download the zip file from github releases
-Take its sha256
-Compare it to the hash of the helm.exe file in the package.
-
-Example:
-
-If the function in Test-Trustworthiness.ps1 returns true, it's authentic.
-
-```Powershell
-
 [CmdletBinding()]
 Param (
     [Parameter(Mandatory=$true)]
@@ -64,6 +50,3 @@ if ($SourceBinHash -eq $PackageBinHash) {
     Write-Output $false
 }
 
-
-
-```
