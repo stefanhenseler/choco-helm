@@ -45,7 +45,7 @@ task init {
     {
         Get-ChildItem -Path Env:APPVEYOR_* | Sort-Object -Property Name
     } else {
-		Set-BuildSecrets -KeyVaultName 'choco-builds' -ErrorAction Stop
+		Set-BuildSecrets -KeyVaultName 'choco-build' -ErrorAction Stop
 	}
 
 }
