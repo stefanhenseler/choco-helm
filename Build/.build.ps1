@@ -172,7 +172,10 @@ task deploy {
 
 		Write-Build -Color Green "The nuget package is located at [$PackagePath]"
 
-		# choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		If($ENV:BHBuildSystem -eq 'AppVeyor')
+		{		
+			choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		}
 }
 
 # Synopsis: Remove temporary files.
