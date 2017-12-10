@@ -138,6 +138,10 @@ task build {
 			Write-Build -Color Green "Replacing [$($Value.Key)] with [$($Value.Value)]"
 			$NuSpecContent = $NuSpecContent -replace $Value.Key,$Value.Value
 		}	
+
+		Write-Build -Color Green "NuSpec Content is:"
+		Write-Build -Color Green $NuSpecContent
+		Write-Build -Color Green ""
 		
 		$NuSpecContent | Set-Content $NuSpecPath
 
@@ -147,6 +151,8 @@ task build {
 			Remove-Item -Recurse -Force -Path $ENV:BHRepositoryPath
 		}		
 		New-Item -ItemType Directory -Path $ENV:BHRepositoryPath | Out-Null
+
+		Write-Build -Color Green "Using nuget spec at [$NuSpecPath]"
 
 		# Create the nuget package
 		choco pack $NuSpecPath --outputdirectory $ENV:BHRepositoryPath
@@ -167,7 +173,7 @@ task deploy {
 
 		Write-Build -Color Green "The nuget package is located at [$PackagePath]"
 
-		choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		# choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
 }
 
 # Synopsis: Remove temporary files.
