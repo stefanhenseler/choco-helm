@@ -155,9 +155,19 @@ task build {
 
 task deploy {
 
+		
+
 		Write-Build -Color Green "Publishing nuget package from [$($ENV:BHRepositoryPath)]"
 
-		choco push $ENV:BHRepositoryPath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		$Package = Get-ChildItem $ENV:BHRepositoryPath
+
+		Write-Output $Package
+
+		$PackagePath = $Package.FullName
+
+		Write-Build -Color Green "The nuget package is located at [$PackagePath]"
+
+		choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
 }
 
 # Synopsis: Remove temporary files.
