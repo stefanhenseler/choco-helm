@@ -155,11 +155,9 @@ task build {
 
 task deploy {
 
-		$PackagePath = ((Get-ChildItem -Path $ENV:BHRepositoryPath -Filter '*.nupkg').FullName)
+		Write-Build -Color Green "Publishing nuget package from [$($ENV:BHRepositoryPath)]"
 
-		Write-Build -Color Green "Publishing nuget package from [$PackagePath]"
-
-		choco push $PackagePath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
+		choco push $ENV:BHRepositoryPath --api-key $env:ChocoAPIKey --source https://chocolatey.org/ -f
 }
 
 # Synopsis: Remove temporary files.
