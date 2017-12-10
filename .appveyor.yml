@@ -4,8 +4,8 @@ environment:
   ChocoAPIKey:
     secure: zdVbrOHSvJx4EpxuoM3BQol0JxuQ8XlKERqIFB01/QvRni/3dvQMC5R4+9cNqxy6
 
-# Allow WMF5 (i.e. PowerShellGallery functionality)
-os: WMF 5
+
+image: Visual Studio 2017
 
 install:
   - cinst -y pester
