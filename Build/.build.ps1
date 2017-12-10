@@ -124,7 +124,6 @@ task build {
 		$ReplaceValues = @{
 			'##AppName##'= $ENV:BHAppName
 			'##AppVersion##' = $ENV:BHAppVersion
-			'##AppUrl##' = $ENV:BHAppUrl
 			'##AppWebsite##' = $ENV:BHAppWebsite
 			'##AppAuhtors##' = $ENV:BHAppAuhtors
 			'##AppDocsUrl##' = $ENV:BHAppDocsUrl
